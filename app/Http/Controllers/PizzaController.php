@@ -13,4 +13,21 @@ class PizzaController extends Controller
     function pizzas() {
         return view('pizzas');
     }
+
+    function insert(Request $req){
+        // validation 
+        $validation=$req->validate([
+            'username'=>'required',
+            'pizza_name'=>'required',
+            'topping'=>'required',
+            'sauce'=>'required',
+            'price'=>'required',
+        ]);
+
+        if($validation){
+            return back()->with("success", "Thank You for Your Order");
+        }else{
+            return back()->withErrors($validation);
+        };
+    }
 }
