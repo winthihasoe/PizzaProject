@@ -2,8 +2,9 @@
 @section("content")
    <!-- Material form register -->
 <div class="container mt-4">
+    <h1 class="grey-text d-inline ml-4">Welcome to pizza place.</h1>
+    <img src="{{asset('img/shop logo.png')}}" width="200px">
     <div class="card">
-
         <h5 class="card-header brown lighten-3  white-text text-center py-4">
             <strong>Order Form</strong>
         </h5>
