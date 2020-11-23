@@ -1,6 +1,7 @@
 @extends("layout.layout")
 @section("content")
 <div class="container">
+
     <table class="table table-hover">
         <thead>
           <tr>
@@ -15,26 +16,21 @@
           </tr>
         </thead>
         <tbody>
+        @foreach ($pizzas as $pizza)
+            
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>$9.99</td>
+            <th scope="row">{{$pizza['id']}}</th>
+            <th scope="row">{{$pizza['username']}}</th>
+            <th scope="row">{{$pizza['pizza_name']}}</th>
+            <th scope="row">{{$pizza['topping']}}</th>
+            <th scope="row">{{$pizza['sauce']}}</th>
+            <th scope="row">$ {{$pizza['price']}}</th>
+        
             <td><button class="btn btn-sm btn-warning mt-0" data-toggle="modal" data-target="#elegantModalForm">Edit Order</button></td>
             <td><button class="btn btn-sm btn-success mt-0">Order Success</button></td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>$9.99</td>
-            <td><button class="btn btn-sm btn-warning mt-0" data-toggle="modal" data-target="#elegantModalForm">Edit Order</button></td>
-            <td><button class="btn btn-sm btn-success mt-0">Order Success</button></td>
-          </tr>
+          
+        @endforeach
           
         </tbody>
       </table>
