@@ -52,4 +52,17 @@ class PizzaController extends Controller
             return back()->withErrors($validation);
         };
     }
+
+    function delete($id){
+        // return 'delete';
+        // return $id;
+
+        // find by ID
+        $delete_pizza_data=Pizza::find($id);
+
+        // delete by ID 
+        $delete_pizza_data->delete();
+
+        return back()->with('delete', "$delete_pizza_data->username Order is deleted");
+    }
 }

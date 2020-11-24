@@ -1,7 +1,11 @@
 @extends("layout.layout")
 @section("content")
 <div class="container">
-
+    @if(Session('delete'))
+        <div class="alert alert-danger mt-3 mb-3">
+            {{Session('delete')}}
+        </div>
+    @endif
     <table class="table table-hover">
         <thead>
           <tr>
@@ -27,7 +31,7 @@
             <th scope="row">$ {{$pizza['price']}}</th>
         
             <td><button class="btn btn-sm btn-warning mt-0" data-toggle="modal" data-target="#elegantModalForm">Edit Order</button></td>
-            <td><button class="btn btn-sm btn-success mt-0">Order Success</button></td>
+            <td><a class="btn btn-sm btn-success mt-0" href="{{route("delete",$pizza->id)}}">Order Success</a></td>
           </tr>
           
         @endforeach
