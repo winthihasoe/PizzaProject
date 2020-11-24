@@ -12,11 +12,14 @@ class PizzaController extends Controller
     }
 
     function pizzas() {
-        $pizzas=[
-            ['id'=>1,'username'=>'Aung','pizza_name'=>'Chicken tikka','topping'=>'Spicy cheese','sauce'=>'tomato','price'=>3.99],
-            ['id'=>1,'username'=>'Kyaw','pizza_name'=>'Chicken Masala','topping'=>'Sweet cheese','sauce'=>'Garlic','price'=>4.99],
-            ['id'=>1,'username'=>'Maung Maung','pizza_name'=>'Pork tikka','topping'=>'Spicy cheese','sauce'=>'tomato','price'=>6.99]
-        ];
+        // $pizzas=[
+        //     ['id'=>1,'username'=>'Aung','pizza_name'=>'Chicken tikka','topping'=>'Spicy cheese','sauce'=>'tomato','price'=>3.99],
+        //     ['id'=>1,'username'=>'Kyaw','pizza_name'=>'Chicken Masala','topping'=>'Sweet cheese','sauce'=>'Garlic','price'=>4.99],
+        //     ['id'=>1,'username'=>'Maung Maung','pizza_name'=>'Pork tikka','topping'=>'Spicy cheese','sauce'=>'tomato','price'=>6.99]
+        // ];
+
+        // send data from database to blade file 
+        $pizzas=Pizza::all();
         // send data to blade file 
         return view('pizzas',['pizzas'=>$pizzas]);
     }
