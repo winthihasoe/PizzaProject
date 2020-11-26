@@ -71,4 +71,18 @@ class PizzaController extends Controller
         $pizza=Pizza::find($id);
         return view('edit',['pizza'=>$pizza]);
     } 
+
+    //update form
+    function update($id,Request $req){
+        $pizza=Pizza::find($id);
+        $pizza->username=$req->username;
+        $pizza->pizza_name=$req->pizza_name;
+        $pizza->topping=$req->topping;
+        $pizza->sauce=$req->sauce;
+        $pizza->price=$req->price;
+        $pizza->update();
+
+        return redirect()->route('pizzas');
+
+    }
 }
