@@ -18,3 +18,6 @@ Route::post('/',[PizzaController::class, 'insert'])->name('insert');
 Route::get('/pizzas', [PizzaController::class, 'pizzas'])->name('pizzas');
 // delete data 
 Route::get('/pizzas/{id}', [PizzaController::class, 'delete'])->name('delete');
+
+// edit order 
+Route::get('/pizzas/edit/{id}',[PizzaController::class,'edit'])->name('edit');
