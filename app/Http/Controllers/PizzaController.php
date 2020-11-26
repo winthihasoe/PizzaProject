@@ -83,6 +83,5 @@ class PizzaController extends Controller
         $pizza->update();
 
         return redirect()->route('pizzas');
-
     }
 }
